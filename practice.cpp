@@ -1,25 +1,18 @@
+#include <bitset>
 #include <iostream>
 
-
-int getInteger(){
-	int x{0};
-	std::cout << "Enter an integer: \n";
-	std::cin >> x;
-
-	return x;
+// "rotl" stands for "rotate left"
+std::bitset<4> rotl(std::bitset<4> bits)
+{
+	return bits<<1|bits>>3;
 }
-
-
-constexpr bool isEven(int num){
-	if(num==1 || num%2!=0)
-		return false;
-	return true;
-
-}
-
 int main()
 {
-	int x{getInteger()};
-	std::cout << x << " is " << (isEven(x) ? "even" : "odd") << '\n';
+	std::bitset<4> bits1{ 0b0001 };
+	std::cout << rotl(bits1) << '\n';
+
+	std::bitset<4> bits2{ 0b1001 };
+	std::cout << rotl(bits2) << '\n';
+
 	return 0;
 }
