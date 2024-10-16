@@ -1,28 +1,17 @@
 #include <iostream>
 
-int getInteger(){
-	std::cout << "Enter an integer: ";
-	int num{0};
-	std::cin >> num;
-
-	return num;
+int accumulate(int x){
+	static int sum{0};
+	sum+=x;
+	return sum;
 }
 
-void swapPrint(int x, int y){
-	if(x<y){
-		int hold{x};
-		x=y;
-		y=hold;
-	}
+int main()
+{
+    std::cout << accumulate(4) << '\n'; // prints 4
+    std::cout << accumulate(3) << '\n'; // prints 7
+    std::cout << accumulate(2) << '\n'; // prints 9
+    std::cout << accumulate(1) << '\n'; // prints 10
 
-	std::cout << "The smaller value is " << y <<'\n';
-	std::cout << "The larger value is " << x <<'\n';
-}
-
-int main(){
-
-	int x{getInteger()};
-	int y{getInteger()};
-	swapPrint(x,y);
-	return 0;
+    return 0;
 }
