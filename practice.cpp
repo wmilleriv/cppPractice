@@ -1,13 +1,24 @@
 #include <iostream>
 
 
-int sumTo(int max){
+void fizzBuzz(int max){
 
-	int total{0};
 	for(int i{1};i<=max;i++){
-		total+=i;
+		if(i%3==0 && i%5==0){
+			std::cout << "fizzbuzz\n";
+		}
+		else if(i%5==0)
+		{
+			std::cout << "buzz\n";
+		}
+		else if(i%3==0){
+			std::cout << "fizz\n";
+		}
+		else{
+			std::cout << i <<'\n';
+		
+		}
 	}
-	return total;
 }
 
 int main(){
@@ -16,7 +27,7 @@ int main(){
 	std::cout << "Enter a number\n";
 	std::cin >> x;
 
-	std::cout << sumTo(x);
+	fizzBuzz(x);
 
 
 	return 0;	
