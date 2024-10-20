@@ -1,33 +1,23 @@
 #include <iostream>
 
-int main()
-{
-    // outer loops between 1 and 5
-    int outer{ 1 };
-    while (outer <=5)
-    {
-        // For each iteration of the outer loop, the code in the body of the loop executes once
 
-        // inner loops between 1 and outer
-        // note: inner will be created and destroyed at the end of the block
-        int inner{5 };
-        while (inner >= 1)
-		
-        {
-		if(outer < inner){
-            		std::cout  << ' ';
-		}
-		else{
-			std::cout << inner;
-		}
-            --inner;
-        }
-	std::cout << '\n';
+int sumTo(int max){
 
-        // print a newline at the end of each row
-        ++outer;
+	int total{0};
+	for(int i{1};i<=max;i++){
+		total+=i;
+	}
+	return total;
+}
 
-    } // inner destroyed here
+int main(){
+	
+	int x{0};
+	std::cout << "Enter a number\n";
+	std::cin >> x;
 
-    return 0;
+	std::cout << sumTo(x);
+
+
+	return 0;	
 }
