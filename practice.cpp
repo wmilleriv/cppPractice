@@ -4,20 +4,24 @@
 void fizzBuzz(int max){
 
 	for(int i{1};i<=max;i++){
-		if(i%3==0 && i%5==0){
-			std::cout << "fizzbuzz\n";
+		bool showNum{true};
+		if(i%3==0){
+			std::cout << "fizz";
+			showNum=false;
 		}
-		else if(i%5==0)
+		if(i%5==0)
 		{
-			std::cout << "buzz\n";
+			std::cout << "buzz";
+			showNum=false;
 		}
-		else if(i%3==0){
-			std::cout << "fizz\n";
+		if(i%7==0){
+			std::cout << "pop";
+			showNum=false;
 		}
-		else{
-			std::cout << i <<'\n';
-		
+		if(showNum){
+			std::cout << i;
 		}
+		std::cout <<'\n';
 	}
 }
 
