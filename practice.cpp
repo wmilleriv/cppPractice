@@ -1,58 +1,55 @@
+// Make sure that assert triggers even if we compile in release mode
+#undef NDEBUG
+
+#include <cassert> // for assert
 #include <iostream>
+#include <limits>
 
-// Gets tower height from user and returns it
-const double getTowerHeight()
-{
-	std::cout << "Enter the height of the tower in meters: ";
-	double towerHeight{};
-	std::cin >> towerHeight;
-	return towerHeight;
-}
+bool isPrime(int x)
+{	
 
-// Returns the current ball height after "seconds" seconds
-constexpr double calculateBallHeight(double towerHeight, int seconds)
-{
-	constexpr double gravity { 9.8 };
-
-	// Using formula: s = (u * t) + (a * t^2) / 2
-	// here u (initial velocity) = 0, so (u * t) = 0
-	const double fallDistance { gravity * (seconds * seconds) / 2.0 };
-	const double ballHeight { towerHeight - fallDistance };
-
-	// If the ball would be under the ground, place it on the ground
-	if (ballHeight < 0.0)
-		return 0.0;
-
-	return ballHeight;
-}
-
-// Prints ball height above ground
-void printBallHeight(double ballHeight, int seconds)
-{
-	if(ballHeight>0)
-		std::cout << "At " << seconds << " seconds, the ball is at height: " << ballHeight << " meters\n";
-	else
-		std::cout << "At " << seconds << " seconds the ball is on the ground.\n";
-}
-
-// Calculates the current ball height and then prints it
-// This is a helper function to make it easier to do this
-void calculateAndPrintBallHeight(double height)
-{
-	int seconds{0};
-	
-	while(height >0){
-		height= calculateBallHeight(height, seconds);
-		printBallHeight(height, seconds);
-		seconds++;
+	if(x==2)
+		return true;
+	if(x<=1 ||  x%2== 0)
+		return false;
+	if(x<9)
+		return true;
+	for(int f{3};f*f<=x;f+=2){
+		if(x%f==0)
+			return false;
 	}
+
+    return true;
 }
 
 int main()
 {
-	double towerHeight{ getTowerHeight() };
+    assert(!isPrime(0)); // terminate program if isPrime(0) is true
+    assert(!isPrime(1));
+    assert(isPrime(2));  // terminate program if isPrime(2) is false
+    assert(isPrime(3));
+    assert(!isPrime(4));
+    assert(isPrime(5));
+    assert(isPrime(7));
+    assert(!isPrime(9));
+    assert(isPrime(11));
+    assert(isPrime(13));
+    assert(!isPrime(15));
+    assert(!isPrime(16));
+    assert(isPrime(17));
+    assert(isPrime(19));
+    assert(isPrime(97));
+    assert(!isPrime(99));
+    assert(isPrime(13417));
 
-	calculateAndPrintBallHeight(towerHeight);
 
-	return 0;
+    std::cout << "Success!\n";
+
+    for(int x{13419};x<=std::numeric_limits<int>::max();x+=2){
+	 if(isPrime(x)){
+		 std::cout << x << " is prime\n";
+	}
+    }
+
+	 return 0;
 }
