@@ -2,9 +2,48 @@
 #include "random.h"
 
 
-bool play(){
-	
+void ignoreLine()
+{
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
 
+
+bool clearFailedExtraction()
+{
+    // Check for failed extraction
+    if (!std::cin) // If the previous extraction failed
+    {
+        if (std::cin.eof()) 
+        {
+		std::cerr << "EOF error\n";
+		std::exit(0);
+	}
+        std::cin.clear(); // Put us back in 'normal' operation mode
+        ignoreLine();     // And remove the bad input
+
+        return true;
+    }
+
+    return false;
+}
+
+int getGuess(){
+
+	int guess{0};
+
+	while(true){
+		std::cin >> guess;
+       		if (clearFailedExtraction())
+       		{
+           		std::cout << "Oops, that input is invalid.  Please try again.\n";
+            		continue;
+        	}
+
+       		 ignoreLine(); // Remove any extraneous input
+        	return guess; 
+   	 }
+}
+bool play(){
 	
 	const int MIN=0;
 	const int MAX=100;
@@ -16,7 +55,7 @@ bool play(){
 
 
 	while(attempt <=7 && guess !=num){
-		std::cin >> guess;
+		guess=getGuess();
 		if(guess<num)
 			std::cout << "Too low\n";
 		else if(guess>num)
@@ -38,8 +77,6 @@ bool play(){
 
 int main(){
 	
-
-
 
 	bool again{true};
 	while(again){
