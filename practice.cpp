@@ -1,26 +1,24 @@
 #include <iostream>
+#include <algorithm>
 
-template<typename T>
-T add( T x, T y){
-	return x+y;	
-}
-template<typename U, typename V>
-U mult(U x, V y){
-	return x*y;
-}
-template<typename W, typename Y>
-auto sub(W x, Y y){
-	return x-y;
+void sort2(int& x, int& y){
+	if(y>x){
+		std::swap(x,y);
+	}
 }
 
 int main()
 {
-	std::cout << add(2, 3) << '\n';
-	std::cout << add(1.2, 3.4) << '\n';
-	std::cout << mult(2, 3) << '\n';
-	std::cout << mult(1.2, 3) << '\n';
-	std::cout << sub(3, 2) << '\n';
-	std::cout << sub(3.5, 2) << '\n';
-	std::cout << sub(4, 1.5) << '\n';
-	return 0;
+    int x { 7 };
+    int y { 5 };
+
+    std::cout << x << ' ' << y << '\n'; // should print 7 5
+
+    sort2(x, y); // make sure sort works when values need to be swapped
+    std::cout << x << ' ' << y << '\n'; // should print 5 7
+
+    sort2(x, y); // make sure sort works when values don't need to be swapped
+    std::cout << x << ' ' << y << '\n'; // should print 5 7
+
+    return 0;
 }
