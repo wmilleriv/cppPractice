@@ -2,13 +2,17 @@
 
 // Provide the definition for IntPair and the print() member function here
 
-class IntPair{
+struct IntPair{
 
-	private:
-		int m_p1{0};
-		int m_p2{0};
+	int x{0};
+	int y{0};
 
+	void print(){
+		std::cout << "{" << x << ", " << y << "}";
+	}
 		
+
+	
 
 };
 
