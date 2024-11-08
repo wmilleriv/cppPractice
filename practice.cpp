@@ -1,38 +1,27 @@
 #include <iostream>
+class Point3d{
+	private:
+		int m_x{0};
+		int m_y{0};
+		int m_z{0};
 
-// Provide the definition for IntPair and the print() member function here
-
-struct IntPair{
-
-	int x{0};
-	int y{0};
-
-	void print(){
-		std::cout << "{" << x << ", " << y << "}";
-	}
-
-	bool isEqual(IntPair p){
-		return x==p.x && y==p.y;
-	}
-		
-
-	
-
+	public:
+		void print(){
+			std::cout << "<" << m_x << "," << m_y << "," << m_z <<">\n";
+		}
+		void setValues(int x,int y,int z){
+			m_x=x;
+			m_y=y;
+			m_z=z;
+		}
 };
-
 int main()
 {
-	IntPair p1 {1, 2};
-	IntPair p2 {3, 4};
+    Point3d point;
+    point.setValues(1, 2, 3);
 
-	std::cout << "p1: ";
-	p1.print();
+    point.print();
+    std::cout << '\n';
 
-	std::cout << "p2: ";
-	p2.print();
-
-	std::cout << "p1 and p1 " << (p1.isEqual(p1) ? "are equal\n" : "are not equal\n");
-	std::cout << "p1 and p2 " << (p1.isEqual(p2) ? "are equal\n" : "are not equal\n");
-
-	return 0;
+    return 0;
 }
