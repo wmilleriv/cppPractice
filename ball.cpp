@@ -3,10 +3,16 @@
 class Ball{
 
 	private:
-		double m_radius{0};
-		std::string m_color{"clear"};
+		double m_radius{10.0};
+		std::string m_color{"black"};
 
 	public:
+		Ball()
+			:Ball{"black", 10.0}{}
+		Ball(std::string color)
+			:Ball{color, 10.0}{}
+		Ball(double radius)
+			:Ball{"black", radius}{}
 		Ball(std::string color, double radius)
 		:m_color{color}, m_radius{radius}{}
 
@@ -25,11 +31,16 @@ class Ball{
 
 int main()
 {
-	Ball blue { "blue", 10.0 };
-	print(blue);
+    Ball def{};
+    print(def);
+    Ball blue{ "blue" };
+    print(blue);
+    Ball twenty{ 20.0 };
+    print(twenty);
+    Ball blueTwenty{ "blue", 20.0 };
+    print(blueTwenty);
 
-	Ball red { "red", 12.0 };
-	print(red);
+    return 0;	
 
 	return 0;
 }
