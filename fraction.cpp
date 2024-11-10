@@ -1,35 +1,48 @@
 #include <iostream>
 
-struct Fraction{
-	int numerator{0};
-	int denominator{1};
+class Fraction
+{
+private:
+    int m_numerator{ 0 };
+    int m_denominator{ 1 };
+
+public:
+    explicit Fraction(int numerator=0, int denominator=1)
+        : m_numerator { numerator }, m_denominator { denominator}
+    {
+    }
+
+    void getFraction()
+    {
+        std::cout << "Enter a value for numerator: ";
+        std::cin >> m_numerator; // this is a member function, so we can access members directly
+        std::cout << "Enter a value for denominator: ";
+        std::cin >> m_denominator;
+        std::cout << '\n';
+    }
+
+    Fraction multiply(const Fraction& f) const
+    {
+        return Fraction{ m_numerator * f.m_numerator, m_denominator * f.m_denominator };
+    }
+
+    void printFraction() const
+    {
+        std::cout << m_numerator << '/' << m_denominator << '\n';
+    }
 };
-
-Fraction getFraction(){
-
-	Fraction f{};
-       	std::cout << "Enter the value of the numerator: ";
-	std::cin >> f.numerator;
-	std::cout << "Enter the value of the denominator: ";
-	std::cin >> f.denominator;
-	return f;
-}
-
-constexpr Fraction operator*(Fraction& x, Fraction& y){
-	return {x.numerator*y.numerator, x.denominator*y.denominator};	
-}
-
-std::ostream& operator<<(std::ostream& out, Fraction& f){
-	return out<<f.numerator << '/' << f.denominator;
-}
 
 int main()
 {
-	Fraction x{getFraction()};
-	Fraction y{getFraction()};
+    Fraction f1{};
+    f1.getFraction();
 
-	Fraction product{x*y};
-	std::cout << x << '*' << y <<'=' << product << '\n';	
-	
-	return 0;
+    Fraction f2{};
+    f2.getFraction();
+
+    std::cout << "Your fractions multiplied together: ";
+
+    f1.multiply(f2).printFraction();
+
+    return 0;
 }
