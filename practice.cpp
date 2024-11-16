@@ -17,6 +17,7 @@ public:
 	{
 		std::cout << "Vector(" << m_x << ", " << m_y << ", " << m_z << ")\n";
 	}
+	friend class Point3d;
 };
 
 class Point3d
@@ -38,7 +39,10 @@ public:
 
 	void moveByVector(const Vector3d& v)
 	{
-		// implement this function as a friend of class Vector3d
+		m_x+=v.m_x;
+		m_y+=v.m_y;
+		m_z+=v.m_z;
+
 	}
 };
 
