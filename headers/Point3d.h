@@ -10,6 +10,8 @@ class Point3d{
 		double m_z{};
 
 	public:
+		Point3d(double x, double y, double z);
+
 		void print() const;
 
 
