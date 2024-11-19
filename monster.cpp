@@ -1,5 +1,6 @@
 #include <iostream>
-
+#include <string>
+#include <string_view>
 
 class Monster{
 	public:
@@ -17,12 +18,12 @@ class Monster{
 	};
 	private:
 
-		Type m_type{maxMonsterTypes};
-		std::string m_name{"bitch boy"};
-		std::string m_roar{"uWuWuWuW"};
-		int m_hitPoints{100};
+		Type m_type{};
+		std::string m_name{};
+		std::string m_roar{};
+		int m_hitPoints{};
 	public:
-		Monster(Type t, std:string name, std::string roar,  int hp)
+		Monster(Type t, std::string_view name, std::string_view roar,  int hp)
 			:m_type{t}, m_name{name}, m_roar{roar}, m_hitPoints{hp}
 		{}
 
