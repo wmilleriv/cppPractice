@@ -27,9 +27,17 @@ class Monster{
 			:m_type{t}, m_name{name}, m_roar{roar}, m_hitPoints{hp}
 		{}
 
+		void print(){
+			std::cout << m_name  << " the  " << "hold" << " has " << m_hitPoints << " and says " << m_roar << '\n';
+		}
+
 };
 
 int main(){
-	Monster skeleton{ Monster::skeleton, "Bones", "*rattle*", 4 };	
+	Monster skeleton{ Monster::skeleton, "Bones", "*rattle*", 4 };
+	skeleton.print();
+
+	Monster vampire{ Monster::vampire, "Nibblez", "*hiss*", 0 };
+	vampire.print();
 	return 0;
 }
