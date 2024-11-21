@@ -26,9 +26,26 @@ class Monster{
 		Monster(Type t, std::string_view name, std::string_view roar,  int hp)
 			:m_type{t}, m_name{name}, m_roar{roar}, m_hitPoints{hp}
 		{}
+		constexpr std::string_view getType(Type t){
+			switch(t){
+				case dragon:return "dragon";
+				case goblin:return "goblin";
+				case ogre:return "ogre";
+				case orc: return "orc";
+				case skeleton:return "skeleton";
+				case troll:return "troll";
+				case vampire:return "vampire";
+				case zombie:return"zombie";
+				case maxMonsterTypes:
+				default:
+					    return"oh shit!";
+
+
+			}
+		}
 
 		void print(){
-			std::cout << m_name  << " the  " << "hold" << " has " << m_hitPoints << " and says " << m_roar << '\n';
+			std::cout << m_name  << " the " << getType(m_type) << " has " << m_hitPoints << " hitpoints and says " << m_roar << '\n';
 		}
 
 };
