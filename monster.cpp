@@ -48,6 +48,14 @@ class Monster{
 			std::cout << m_name  << " the " << getType(m_type) << " has " << m_hitPoints << " hitpoints and says " << m_roar << '\n';
 		}
 
+		std::string_view getName(int name)
+		{
+			return "";
+		}
+		std::string_view getRoar(int roar){
+			return "";
+		}
+
 };
 
 int main(){
