@@ -48,21 +48,46 @@ class Monster{
 			std::cout << m_name  << " the " << getType(m_type) << " has " << m_hitPoints << " hitpoints and says " << m_roar << '\n';
 		}
 
-		std::string_view getName(int name)
-		{
-			return "";
-		}
-		std::string_view getRoar(int roar){
-			return "";
-		}
+};
 
+namespace MonsterGenerator{
+    std::string_view getName(int n)
+	{
+        switch (n)
+        {
+            case 0:  return "Blarg";
+            case 1:  return "Moog";
+            case 2:  return "Pksh";
+            case 3:  return "Tyrn";
+            case 4:  return "Mort";
+            case 5:  return "Hans";
+            default: return "???";
+        }
+    }
+
+    std::string_view getRoar(int n)
+	{
+        switch (n)
+        {
+            case 0:  return "*ROAR*";
+            case 1:  return "*peep*";
+            case 2:  return "*squeal*";
+            case 3:  return "*whine*";
+            case 4:  return "*growl*";
+            case 5:  return "*burp*";
+            default: return "???";
+        }
+    }
+
+	Monster generate()
+	{
+		return Monster{ Monster::skeleton, getName(0), getRoar(0), 4 };
+	}
 };
 
 int main(){
-	Monster skeleton{ Monster::skeleton, "Bones", "*rattle*", 4 };
-	skeleton.print();
-
-	Monster vampire{ Monster::vampire, "Nibblez", "*hiss*", 0 };
-	vampire.print();
+	
+	Monster m{ MonsterGenerator::generate() };
+	m.print();	
 	return 0;
 }
