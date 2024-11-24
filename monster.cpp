@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <string_view>
+#include <vector>
 
 class Monster{
 	public:
@@ -86,7 +87,7 @@ namespace MonsterGenerator{
 };
 
 int main(){
-	
+	std::vector<int> v{1,2,3,4,5};	
 	Monster m{ MonsterGenerator::generate() };
 	m.print();	
 	return 0;
