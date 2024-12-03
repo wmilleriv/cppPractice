@@ -3,8 +3,13 @@
 
 // Write your printElement function here
 template<typename T>
-void printElement(std::vector<T>& v, int i){
-	std::cout << v[i] << '\n';
+void printElement(const std::vector<T>& v, int i){
+	if(i<0 || i>= static_cast<int>(v.size())){
+			std::cout << "Invalid Index\n";
+		}
+	else{
+		std::cout << v[i] << '\n';
+	}
 }
 
 int main()
