@@ -2,6 +2,10 @@
 #include <vector>
 
 // Write your printElement function here
+template<typename T>
+void printElement(std::vector<T>& v, int i){
+	std::cout << v[i] << '\n';
+}
 
 int main()
 {
