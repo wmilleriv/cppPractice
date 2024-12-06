@@ -1,6 +1,10 @@
 #include <iostream>
 #include <vector>
 
+int getUserInput(){
+
+	return in;
+}
 
 void printArray(const std::vector<int> arr){
 
