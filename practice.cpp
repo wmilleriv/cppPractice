@@ -2,7 +2,9 @@
 #include <vector>
 
 int getUserInput(){
-
+	int in{0};
+	std::cout << "Enter a value: ";
+	std::cin >> in;
 	return in;
 }
 
