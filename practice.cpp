@@ -7,6 +7,10 @@ int getUserInput(){
 	std::cin >> in;
 	return in;
 }
+bool isInArray()
+{
+	return 0;
+}
 
 void printArray(const std::vector<int> arr){
 
