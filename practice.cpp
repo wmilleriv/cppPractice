@@ -30,5 +30,17 @@ int main()
 
     printArray(arr);
 
+    int x{getUserInput()};
+
+    if(isInArray(arr, x))
+	{
+		std::cout << "yes";
+	}
+	else
+	{
+	std::cout << "no";
+	}
+
+
     return 0;
 }
