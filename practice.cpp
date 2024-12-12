@@ -7,9 +7,13 @@ int getUserInput(){
 	std::cin >> in;
 	return in;
 }
-bool isInArray()
+bool isInArray(const std::vector<int> arr, int item))
 {
-	return 0;
+	for(int i{0};i<arr.length();i++){
+		if(arr[i]==item)
+			return true;
+	}
+	return false;
 }
 
 void printArray(const std::vector<int> arr){
