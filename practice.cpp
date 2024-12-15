@@ -1,13 +1,16 @@
 #include <iostream>
 #include <vector>
 
-int getUserInput(){
-	int in{0};
+template <typename T>
+T getUserInput(){
+	T in{0};
 	std::cout << "Enter a value: ";
 	std::cin >> in;
 	return in;
 }
-bool isInArray(const std::vector<int> arr, int item)
+
+template <typename T>
+bool isInArray(const std::vector<T> arr, T item)
 {
 	for(int i{0};i<arr.size();i++){
 		if(arr[i]==item)
@@ -16,10 +19,11 @@ bool isInArray(const std::vector<int> arr, int item)
 	return false;
 }
 
-void printArray(const std::vector<int> arr){
+template <typename T>
+void printArray(const std::vector<T> arr){
 
 
-    for(int i{0};i<static_cast<int>(arr.size());i++){
+    for(int i{0};i<static_cast<T>(arr.size());i++){
     	std::cout << arr[i] << '\n';
     }
 }
@@ -30,7 +34,8 @@ int main()
 
     printArray(arr);
 
-    int x{getUserInput()};
+    twmplate <typename T>
+    T x{getUserInput()};
 
     if(isInArray(arr, x))
 	{
