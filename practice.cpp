@@ -10,6 +10,18 @@ std::string getInput(){
     return str;
 }
 
+bool namefound(std::string str, std::vector<std::string> names){
+
+    for (auto name : names){
+        if(name==str)
+            return true;
+    }
+
+    return false;
+}
+        
+
+
 int main()
 {
     std::vector names { "Alex", "Betty", "Caoline", "Dave", "Emily", "Fred", "Greg", "Holly" };
