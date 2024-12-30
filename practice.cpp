@@ -31,5 +31,7 @@ int main()
 
     std::cout << '\n';
 
+    std::string_view str{getInput()};
+
     return 0;
 }
