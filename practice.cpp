@@ -10,7 +10,7 @@ std::string getInput(){
     return str;
 }
 
-bool namefound(std::string str, std::vector<std::string> names){
+bool nameFound(std::string str, std::vector<std::string> names){
 
     for (auto name : names){
         if(name==str)
@@ -33,5 +33,6 @@ int main()
 
     std::string_view str{getInput()};
 
+    std::cout << "The string was " << (nameFound ? "found" : "not dound") << '\n'; 
     return 0;
 }
