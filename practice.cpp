@@ -2,7 +2,7 @@
 #include <vector>
 #include <string_view>
 
-const std::string getInput(){
+const std::string_view getInput(){
 
     std::string str{};
     std::cout << "Enter a name: ";
@@ -10,7 +10,7 @@ const std::string getInput(){
     return str;
 }
 
-bool nameFound(std::string str, std::vector<std::string> names){
+bool nameFound(std::string_view str, std::vector<std::string> names){
 
     for (auto name : names){
         if(name==str)
@@ -24,7 +24,7 @@ bool nameFound(std::string str, std::vector<std::string> names){
 
 int main()
 {
-    std::vector names { "Alex", "Betty", "Caoline", "Dave", "Emily", "Fred", "Greg", "Holly" };
+    std::vector<std::string> names { "Alex", "Betty", "Caoline", "Dave", "Emily", "Fred", "Greg", "Holly" };
 
     for (auto num : names) // iterate over array fibonacci and copy each value into `num`
        std::cout << num << ' '; // print the current value of `num`
@@ -33,6 +33,6 @@ int main()
 
     const std::string_view str{getInput()};
 
-    std::cout << "The string was " << (nameFound ? "found" : "not dound") << '\n'; 
+    std::cout << "The string was " << (nameFound(str, names) ? "found" : "not dound") << '\n'; 
     return 0;
 }
