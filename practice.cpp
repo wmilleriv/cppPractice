@@ -31,7 +31,7 @@ int main()
 
     std::cout << '\n';
 
-    std::string_view str{getInput()};
+    const std::string_view str{getInput()};
 
     std::cout << "The string was " << (nameFound ? "found" : "not dound") << '\n'; 
     return 0;
