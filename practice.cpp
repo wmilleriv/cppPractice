@@ -12,11 +12,9 @@ std::string getInput(){
 }
 
 template <typename T>
-bool nameFound(T item, std::vector<T> names){
-    std::cout << "here\n";
-    for (auto name : names){
-        //std::cout << name << " " << str << '\n';
-        if(name==item)
+bool nameFound(const T& value, const std::vector<T>& arr){
+    for (const auto& item : arr){
+        if(value==item)
             return true;
     }
 
@@ -35,7 +33,6 @@ int main()
     std::cout << '\n';
 
     std::string_view str{getInput()};
-    std::cout<<str << " is main\n";
     bool test{nameFound(str, names)};
     std::cout << "The string was " << (nameFound(str, names) ? "found" : "not found") << '\n'; 
     return 0;
