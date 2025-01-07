@@ -2,7 +2,7 @@
 #include <vector>
 #include <string_view>
 
-std::string_view getInput(){
+std::string getInput(){
 
     std::string str{};
     std::cout << "Enter a name: ";
