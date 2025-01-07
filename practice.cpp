@@ -13,7 +13,7 @@ std::string_view getInput(){
 
 bool nameFound(std::string_view str, std::vector<std::string> names){
     std::cout << "here\n";
-    for (auto name : names){
+    for (std::string_view name : names){
         //std::cout << name << " " << str << '\n';
         if(name==str)
             return true;
@@ -34,7 +34,7 @@ int main()
     std::cout << '\n';
 
     std::string_view str{getInput()};
-    std::cout<<str << " is inmain\n";
+    std::cout<<str << " is main\n";
     bool test{nameFound(str, names)};
     std::cout << "The string was " << (nameFound(str, names) ? "found" : "not found") << '\n'; 
     return 0;
