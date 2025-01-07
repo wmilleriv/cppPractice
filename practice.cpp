@@ -11,11 +11,12 @@ std::string getInput(){
     return str;
 }
 
-bool nameFound(std::string_view str, std::vector<std::string> names){
+template <typename T>
+bool nameFound(T item, std::vector<T> names){
     std::cout << "here\n";
-    for (std::string_view name : names){
+    for (auto name : names){
         //std::cout << name << " " << str << '\n';
-        if(name==str)
+        if(name==item)
             return true;
     }
 
