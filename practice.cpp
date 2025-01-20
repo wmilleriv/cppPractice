@@ -32,7 +32,7 @@ int main()
 
     std::cout << '\n';
 
-    std::string_view str{getInput()};
+    std::string str{getInput()};
     bool test{nameFound(str, names)};
     std::cout << "The string was " << (nameFound(str, names) ? "found" : "not found") << '\n'; 
     return 0;
