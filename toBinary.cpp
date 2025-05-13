@@ -4,6 +4,7 @@
 #include <sstream>
 #include <algorithm>
 
+int menu()
 int getInput(){
 	std::cout << "Please enter a decimal value: ";
 	int dec{0};
