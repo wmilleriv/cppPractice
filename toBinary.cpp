@@ -5,13 +5,17 @@
 #include <algorithm>
 
 int menu(){
-    std::cout << "\n";
-    std::cout << "\n";
-    std::cout << "\n";
-    std::cout << "\n";
-    std::cout << "\n";
-    std::cout << "\n";
-    std::cout << "\n";
+    int numType{0}
+    std::cout << "------------------------------------------------\n";
+    std::cout << "1) Convert a decimal number\n";
+    std::cout << "2) Convert a binary number\n";
+    std::cout << "3) Convert an octal number\n";
+    std::cout << "4) Convert a hexadecimal number\n";
+    std::cout << "------------------------------------------------\n";
+    std::cout << "5) Quit \n";
+
+    return numType;
+}
 int getInput(){
 	std::cout << "Please enter a decimal value: ";
 	int dec{0};
