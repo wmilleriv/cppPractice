@@ -5,7 +5,7 @@
 #include <algorithm>
 
 int menu(){
-    int numType{0}
+    int numType{0};
     std::cout << "------------------------------------------------\n";
     std::cout << "1) Convert a decimal number\n";
     std::cout << "2) Convert a binary number\n";
@@ -14,15 +14,16 @@ int menu(){
     std::cout << "------------------------------------------------\n";
     std::cout << "5) Quit \n";
 
+    std::cin >> numType;
     return numType;
 }
-int getInput(){
+/*int getInput(){
 	std::cout << "Please enter a decimal value: ";
 	int dec{0};
 	std::cin >> dec;
 
 	return dec;
-}
+}*/
 std::string decToBinary(int dec){
 	
 	std::ostringstream oss;
@@ -42,9 +43,11 @@ std::string decToBinary(int dec){
 int main(){
 	while(true)
 	{
-		int dec{getInput()};
-		std::cout << decToBinary(dec) << '\n';
-	}
+        
+		int option{menu()};
+	    if(option==5)return 0;
+    }
+
 	return 0;
 }
 
