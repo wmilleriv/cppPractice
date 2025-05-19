@@ -17,13 +17,13 @@ int menu(){
     std::cin >> numType;
     return numType;
 }
-/*int getInput(){
-	std::cout << "Please enter a decimal value: ";
-	int dec{0};
-	std::cin >> dec;
+int getInput(){
+	std::cout << "Please enter a value to convert: ";
+    std::string  in{""};
+	std::cin >> in;
 
-	return dec;
-}*/
+	return in;
+}
 std::string decToBinary(int dec){
 	
 	std::ostringstream oss;
@@ -43,9 +43,13 @@ std::string decToBinary(int dec){
 int main(){
 	while(true)
 	{
-        
 		int option{menu()};
 	    if(option==5)return 0;
+        std::string input{getInput()};
+        std::cout << "Decimal: " + +'\n';
+        std::cout << "Binary: " + +'\n';
+        std::cout << "Octal: " + +'\n';
+        std::cout << "Hexadecimal: " + +'\n';
     }
 
 	return 0;
