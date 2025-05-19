@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <string_view>
-#include <sstream>
 #include <algorithm>
 
 int menu(){
@@ -17,7 +16,7 @@ int menu(){
     std::cin >> numType;
     return numType;
 }
-int getInput(){
+std::string_view getInput(){
 	std::cout << "Please enter a value to convert: ";
     std::string  in{""};
 	std::cin >> in;
