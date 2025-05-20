@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <string_view>
-#include <algorithm>
 
 int menu(){
     int numType{0};
