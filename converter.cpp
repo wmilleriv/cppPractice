@@ -17,10 +17,26 @@ int menu(){
     std::cin >> choice;
     
     return choice;
-
+}
 
 int main(){
     while(true){
-        menu()
+        int inputType(menu());
+        switch(inputType){
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                return 0;
+            default:
+                std::cout << "Invalid Selection\n";
+                return -1;
+        }
+    }
     return 0;
 }
