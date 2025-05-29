@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string_view>
+
 
 int menu(){
 
@@ -18,7 +20,14 @@ int menu(){
     
     return choice;
 }
-
+String_view decToBin(int d){
+    String bin="";
+    while(d>0){
+        bin+=d%2;
+        d=d/2;
+    }
+    return bin;
+}
 int main(){
     while(true){
         int inputType(menu());
