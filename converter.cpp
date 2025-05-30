@@ -28,6 +28,14 @@ String_view decToBin(int d){
     }
     return bin;
 }
+String_view decToOct(int d){
+    String oct="";
+    while(d>0){
+        oct+=d%8;
+        d=d/8;
+    }
+    return oct;
+}
 int main(){
     while(true){
         int inputType(menu());
