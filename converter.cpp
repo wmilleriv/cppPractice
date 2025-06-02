@@ -36,6 +36,10 @@ String_view decToOct(int d){
     }
     return oct;
 }
+String_view binToDec(String_view d){
+    int dec{0};
+    return dec;
+}
 int main(){
     while(true){
         int inputType(menu());
