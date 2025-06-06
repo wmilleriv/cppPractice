@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <string_view>
 
 
@@ -20,23 +21,23 @@ int menu(){
     
     return choice;
 }
-String_view decToBin(int d){
-    String bin="";
+std::string_view decToBin(int d){
+    std::string bin="";
     while(d>0){
         bin+=d%2;
         d=d/2;
     }
     return bin;
 }
-String_view decToOct(int d){
-    String oct="";
+std::string_view decToOct(int d){
+    std::string oct="";
     while(d>0){
         oct+=d%8;
         d=d/8;
     }
     return oct;
 }
-String_view binToDec(String_view d){
+int binToDec(std::string_view d){
     int dec{0};
     return dec;
 }
