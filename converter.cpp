@@ -21,6 +21,12 @@ int menu(){
     
     return choice;
 }
+std::string_view getInputValue(){
+    std::cout << "Enter a value to convert: ";
+    std::string in{};
+    std::cin >> in;
+    return in;
+}
 std::string_view decToBin(int d){
     std::string bin="";
     while(d>0){
@@ -44,14 +50,31 @@ int binToDec(std::string_view d){
 int main(){
     while(true){
         int inputType(menu());
+        std::string_view input{getInputValue()};
         switch(inputType){
             case 1:
+                std::cout << "Decimal: " << input << '\n';
+                std::cout << "Binary: " << '\n';
+                std::cout << "Octal: " << '\n';
+                std::cout << "Hexaecimal: " << '\n';
                 break;
             case 2:
+                std::cout << "Decimal: " << '\n';
+                std::cout << "Binary: " << input << '\n';
+                std::cout << "Octal: " << '\n';
+                std::cout << "Hexaecimal: " << '\n';
                 break;
             case 3:
+                std::cout << "Decimal: " << '\n';
+                std::cout << "Binary: " << '\n';
+                std::cout << "Octal: " << input <<'\n';
+                std::cout << "Hexaecimal: " << '\n';
                 break;
             case 4:
+                std::cout << "Decimal: " << '\n';
+                std::cout << "Binary: " << '\n';
+                std::cout << "Octal: " << '\n';
+                std::cout << "Hexaecimal: " << input << '\n';
                 break;
             case 5:
                 return 0;
