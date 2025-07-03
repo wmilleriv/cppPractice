@@ -30,7 +30,7 @@ std::string_view getInputValue(){
 std::string_view decToBin(int d){
     std::string bin="";
     while(d>0){
-        bin+=d%2;
+        bin+=static_cast<char>(d%2);
         d=d/2;
     }
     return bin;
@@ -38,13 +38,14 @@ std::string_view decToBin(int d){
 std::string_view decToOct(int d){
     std::string oct="";
     while(d>0){
-        oct+=d%8;
+        oct+=static_cast<char>(d%8);
         d=d/8;
     }
     return oct;
 }
 int binToDec(std::string_view d){
     int dec{0};
+
     return dec;
 }
 int main(){
