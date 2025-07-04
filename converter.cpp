@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <string_view>
-
+#include <vector>
 
 int menu(){
 
@@ -21,6 +21,14 @@ int menu(){
     
     return choice;
 }
+
+void stringToStack(const std::string_view& str, std::vector<char>& stack){
+    for(size_t i=0;i<str.length();i++){
+        stack.push_back(str[i]);
+    }
+}
+
+
 std::string_view getInputValue(){
     std::cout << "Enter a value to convert: ";
     std::string in{};
@@ -45,7 +53,9 @@ std::string_view decToOct(int d){
 }
 int binToDec(std::string_view d){
     int dec{0};
-
+    std::vector<char> ss{};//reversed string stack
+    stringToStack(d, ss);
+    dec+=ss.pop_back(1);
     return dec;
 }
 int main(){
