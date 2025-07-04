@@ -55,7 +55,8 @@ int binToDec(std::string_view d){
     int dec{0};
     std::vector<char> ss{};//reversed string stack
     stringToStack(d, ss);
-    dec+=ss.pop_back(1);
+    for(i=0;i<ss.length();i++){
+        dec+=ss.
     return dec;
 }
 int main(){
