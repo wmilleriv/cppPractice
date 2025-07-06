@@ -2,6 +2,7 @@
 #include <string>
 #include <string_view>
 #include <vector>
+#include <cmath>
 
 int menu(){
 
@@ -55,8 +56,9 @@ int binToDec(std::string_view d){
     int dec{0};
     std::vector<char> ss{};//reversed string stack
     stringToStack(d, ss);
-    for(i=0;i<ss.length();i++){
-        dec+=ss.
+    for(size_t i{0};i<ss.size();i++){
+        dec+=static_cast<int>(ss[i])*static_cast<int>((std::pow(2,i)));
+    }
     return dec;
 }
 int main(){
