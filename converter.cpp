@@ -30,7 +30,7 @@ void stringToStack(const std::string_view& str, std::vector<char>& stack){
 }
 
 
-std::string_view getInputValue(){
+std::string getInputValue(){
     std::cout << "Enter a value to convert: ";
     std::string in{};
     std::cin >> in;
@@ -64,7 +64,7 @@ int binToDec(std::string_view d){
 int main(){
     while(true){
         int inputType(menu());
-        std::string_view input{getInputValue()};
+        const std::string_view input{getInputValue()};
         switch(inputType){
             case 1:
                 std::cout << "Decimal: " << input << '\n';
