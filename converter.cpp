@@ -56,14 +56,18 @@ int binToDec(std::string_view d){
     int dec{0};
     std::vector<char> ss{};//reversed string stack
     stringToStack(d, ss);
-    for(size_t i{0};i<ss.size();i++){
-        dec+=static_cast<int>(ss[i])*static_cast<int>((std::pow(2,i)));
+    int i{0};
+    while(!ss.empty()){
+        dec+=(static_cast<int>((ss.back()-'0'))*(static_cast<int>((std::pow(2,i)))));//-'0' to handle ascii conversion
+        ss.pop_back();
+        i++;
     }
     return dec;
 }
 int main(){
     while(true){
         int inputType(menu());
+        if(inputType==5)return 0;
         const std::string_view input{getInputValue()};
         switch(inputType){
             case 1:
@@ -73,7 +77,7 @@ int main(){
                 std::cout << "Hexaecimal: " << '\n';
                 break;
             case 2:
-                std::cout << "Decimal: " << '\n';
+                std::cout << "Decimal: " << binToDec(input) << '\n';
                 std::cout << "Binary: " << input << '\n';
                 std::cout << "Octal: " << '\n';
                 std::cout << "Hexaecimal: " << '\n';
