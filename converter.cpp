@@ -36,18 +36,18 @@ std::string getInputValue(){
     std::cin >> in;
     return in;
 }
-std::string_view decToBin(int d){
+std::string decToBin(int d){
     std::string bin="";
     while(d>0){
-        bin+=static_cast<char>(d%2);
+        bin.insert(0,std::to_string(d%2));
         d=d/2;
     }
     return bin;
 }
-std::string_view decToOct(int d){
+std::string decToOct(int d){
     std::string oct="";
     while(d>0){
-        oct+=static_cast<char>(d%8);
+        oct.insert(0,std::to_string(d%8));
         d=d/8;
     }
     return oct;
@@ -68,12 +68,12 @@ int main(){
     while(true){
         int inputType(menu());
         if(inputType==5)return 0;
-        const std::string_view input{getInputValue()};
+        std::string input{getInputValue()};
         switch(inputType){
             case 1:
                 std::cout << "Decimal: " << input << '\n';
-                std::cout << "Binary: " << '\n';
-                std::cout << "Octal: " << '\n';
+                std::cout << "Binary: " << decToBin(stoi(input)) << '\n';
+                std::cout << "Octal: " << decToOct(stoi(input)) << '\n';
                 std::cout << "Hexaecimal: " << '\n';
                 break;
             case 2:
