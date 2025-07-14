@@ -65,7 +65,7 @@ int binToDec(std::string_view d){
     return dec;
 }
 
-int cotToDec(std::string_view d){
+int octToDec(std::string_view d){
     int dec{0};
     std::vector<char> ss{};//reversed string stack
     stringToStack(d, ss);
@@ -96,7 +96,7 @@ int main(){
                 std::cout << "Hexaecimal: " << '\n';
                 break;
             case 3:
-                std::cout << "Decimal: " << '\n';
+                std::cout << "Decimal: " << octToDec(input) << '\n';
                 std::cout << "Binary: " << '\n';
                 std::cout << "Octal: " << input <<'\n';
                 std::cout << "Hexaecimal: " << '\n';
