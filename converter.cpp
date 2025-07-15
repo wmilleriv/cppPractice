@@ -92,7 +92,7 @@ int main(){
             case 2:
                 std::cout << "Decimal: " << binToDec(input) << '\n';
                 std::cout << "Binary: " << input << '\n';
-                std::cout << "Octal: " << '\n';
+                std::cout << "Octal: " << decToOct(binToDec(input)) << '\n';
                 std::cout << "Hexaecimal: " << '\n';
                 break;
             case 3:
