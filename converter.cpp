@@ -52,6 +52,13 @@ std::string decToOct(int d){
     }
     return oct;
 }
+std::string decToHex(int d){
+    std::string hex="";
+    while(d>0){
+        hex.insert(0,std::tostring(d%16));
+        d=d/16;
+    }
+    return hex;
 int binToDec(std::string_view d){
     int dec{0};
     std::vector<char> ss{};//reversed string stack
