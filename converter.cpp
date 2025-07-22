@@ -22,6 +22,25 @@ int menu(){
     
     return choice;
 }
+char getHexDigit(int digit){
+    switch(digit){
+        case 10:
+            return 'A';
+        case 11:
+            return 'B';
+        case 12:
+            return 'C';
+        case 13:
+            return 'D';
+        case 14:
+            return 'E';
+        case 15:
+            return 'F';
+        default:
+            return static_cast<char>(digit);
+    }
+    return -1;//error
+}
 
 void stringToStack(const std::string_view& str, std::vector<char>& stack){
     for(size_t i=0;i<str.length();i++){
@@ -55,10 +74,11 @@ std::string decToOct(int d){
 std::string decToHex(int d){
     std::string hex="";
     while(d>0){
-        hex.insert(0,std::tostring(d%16));
+        hex.insert(0,std::to_string(d%16));
         d=d/16;
     }
     return hex;
+}
 int binToDec(std::string_view d){
     int dec{0};
     std::vector<char> ss{};//reversed string stack
