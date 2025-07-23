@@ -22,24 +22,24 @@ int menu(){
     
     return choice;
 }
-char getHexDigit(int digit){
+std::string getHexDigit(int digit){
     switch(digit){
         case 10:
-            return 'A';
+            return "A";
         case 11:
-            return 'B';
+            return "B";
         case 12:
-            return 'C';
+            return "C";
         case 13:
-            return 'D';
+            return "D";
         case 14:
-            return 'E';
+            return "E";
         case 15:
-            return 'F';
+            return "F";
         default:
-            return static_cast<char>(digit);
+            return std::to_string(digit);
     }
-    return -1;//error
+    return "ERROR";//error
 }
 
 void stringToStack(const std::string_view& str, std::vector<char>& stack){
@@ -74,7 +74,7 @@ std::string decToOct(int d){
 std::string decToHex(int d){
     std::string hex="";
     while(d>0){
-        hex.insert(0,std::to_string(d%16));
+        hex.insert(0,(getHexDigit(d%16)));
         d=d/16;
     }
     return hex;
@@ -114,25 +114,25 @@ int main(){
                 std::cout << "Decimal: " << input << '\n';
                 std::cout << "Binary: " << decToBin(stoi(input)) << '\n';
                 std::cout << "Octal: " << decToOct(stoi(input)) << '\n';
-                std::cout << "Hexaecimal: " << '\n';
+                std::cout << "Hexadecimal: "<<decToHex(stoi(input)) << '\n';
                 break;
             case 2:
                 std::cout << "Decimal: " << binToDec(input) << '\n';
                 std::cout << "Binary: " << input << '\n';
                 std::cout << "Octal: " << decToOct(binToDec(input)) << '\n';
-                std::cout << "Hexaecimal: " << '\n';
+                std::cout << "Hexadecimal: " << '\n';
                 break;
             case 3:
                 std::cout << "Decimal: " << octToDec(input) << '\n';
                 std::cout << "Binary: " <<decToBin(octToDec(input)) << '\n';
                 std::cout << "Octal: " << input <<'\n';
-                std::cout << "Hexaecimal: " << '\n';
+                std::cout << "Hexadecimal: " << '\n';
                 break;
             case 4:
                 std::cout << "Decimal: " << '\n';
                 std::cout << "Binary: " << '\n';
                 std::cout << "Octal: " << '\n';
-                std::cout << "Hexaecimal: " << input << '\n';
+                std::cout << "Hexadecimal: " << input << '\n';
                 break;
             case 5:
                 return 0;
