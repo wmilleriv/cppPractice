@@ -104,6 +104,18 @@ int octToDec(std::string_view d){
     }
     return dec;
 }
+int hexToDec(std::string_view d){
+    int dec{0};
+    std::vector<char> ss{};
+    stringToStack(d, ss);
+    int i{0};
+    while(!ss.empty()){
+        dec+=(static_cast<int>((ss.back()-'0'))*(static_cast<int>((std::pow(16,i)))));//-'0' to handle ascii conversion
+        ss.pop_back();
+        i++;
+    }
+    return dec;
+}
 int main(){
     while(true){
         int inputType(menu());
