@@ -41,6 +41,24 @@ std::string getHexDigit(int digit){
     }
     return "ERROR";//error
 }
+int getDigitfromHexVal(char c){
+    switch(c){
+        case 'A':
+            return 10;
+        case 'B':
+            return 11;
+        case 'C':
+            return 12;
+        case 'D':
+            return 13;
+        case 'E':
+            return 14;
+        case 'F':
+            return 15;
+        default:
+            return c-'0';
+    }
+}
 
 void stringToStack(const std::string_view& str, std::vector<char>& stack){
     for(size_t i=0;i<str.length();i++){
@@ -126,7 +144,7 @@ int main(){
                 std::cout << "Decimal: " << input << '\n';
                 std::cout << "Binary: " << decToBin(stoi(input)) << '\n';
                 std::cout << "Octal: " << decToOct(stoi(input)) << '\n';
-                std::cout << "Hexadecimal: "<<decToHex(stoi(input)) << '\n';
+                std::cout << "Hexadecimal: "<< decToHex(stoi(input)) << '\n';
                 break;
             case 2:
                 std::cout << "Decimal: " << binToDec(input) << '\n';
@@ -141,7 +159,7 @@ int main(){
                 std::cout << "Hexadecimal: " << '\n';
                 break;
             case 4:
-                std::cout << "Decimal: " << '\n';
+                std::cout << "Decimal: " << hexToDec(input) << '\n';
                 std::cout << "Binary: " << '\n';
                 std::cout << "Octal: " << '\n';
                 std::cout << "Hexadecimal: " << input << '\n';
