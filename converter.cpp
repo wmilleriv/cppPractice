@@ -41,7 +41,7 @@ std::string getHexDigit(int digit){
     }
     return "ERROR";//error
 }
-int getDigitfromHexVal(char c){
+int getDigitFromHexVal(char c){
     switch(c){
         case 'A':
             return 10;
@@ -128,7 +128,7 @@ int hexToDec(std::string_view d){
     stringToStack(d, ss);
     int i{0};
     while(!ss.empty()){
-        dec+=(static_cast<int>((ss.back()-'0'))*(static_cast<int>((std::pow(16,i)))));//-'0' to handle ascii conversion
+        dec+=(static_cast<int>(getDigitFromHexVal((ss.back()-'0'))*(static_cast<int>((std::pow(16,i))))));//-'0' to handle ascii conversion
         ss.pop_back();
         i++;
     }
