@@ -128,7 +128,7 @@ int hexToDec(std::string_view d){
     stringToStack(d, ss);
     int i{0};
     while(!ss.empty()){
-        dec+=(static_cast<int>(getDigitFromHexVal((ss.back()-'0'))*(static_cast<int>((std::pow(16,i))))));//-'0' to handle ascii conversion
+        dec+=(getDigitFromHexVal(ss.back())*(static_cast<int>((std::pow(16,i)))));
         ss.pop_back();
         i++;
     }
