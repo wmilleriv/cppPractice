@@ -150,13 +150,13 @@ int main(){
                 std::cout << "Decimal: " << binToDec(input) << '\n';
                 std::cout << "Binary: " << input << '\n';
                 std::cout << "Octal: " << decToOct(binToDec(input)) << '\n';
-                std::cout << "Hexadecimal: " << '\n';
+                std::cout << "Hexadecimal: " << decToHex(binToDec(input))<<'\n';
                 break;
             case 3:
                 std::cout << "Decimal: " << octToDec(input) << '\n';
                 std::cout << "Binary: " <<decToBin(octToDec(input)) << '\n';
                 std::cout << "Octal: " << input <<'\n';
-                std::cout << "Hexadecimal: " << '\n';
+                std::cout << "Hexadecimal: " << decToHex(octToDec(input)) << '\n';
                 break;
             case 4:
                 std::cout << "Decimal: " << hexToDec(input) << '\n';
