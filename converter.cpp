@@ -160,8 +160,8 @@ int main(){
                 break;
             case 4:
                 std::cout << "Decimal: " << hexToDec(input) << '\n';
-                std::cout << "Binary: " << '\n';
-                std::cout << "Octal: " << '\n';
+                std::cout << "Binary: "<< decToBin(hexToDec(input)) << '\n';
+                std::cout << "Octal: " << decToOct(hexToDec(input)) << '\n';
                 std::cout << "Hexadecimal: " << input << '\n';
                 break;
             case 5:
